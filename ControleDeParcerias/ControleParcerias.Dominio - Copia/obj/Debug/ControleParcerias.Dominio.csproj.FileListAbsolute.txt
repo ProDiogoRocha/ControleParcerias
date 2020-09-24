@@ -1,0 +1,5 @@
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleParcerias.Dominio\bin\Debug\ControleParcerias.Dominio.dll
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleParcerias.Dominio\bin\Debug\ControleParcerias.Dominio.pdb
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleParcerias.Dominio\obj\Debug\ControleParcerias.Dominio.dll
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleParcerias.Dominio\obj\Debug\ControleParcerias.Dominio.pdb
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleParcerias.Dominio\obj\Debug\ControleParcerias.Dominio.csprojAssemblyReference.cache

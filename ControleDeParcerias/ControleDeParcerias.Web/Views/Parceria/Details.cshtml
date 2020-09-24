@@ -1,0 +1,82 @@
+﻿@model ControleDeParcerias.Web.ViewModels.ParceriaViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhe</h2>
+
+<div>
+    <h4>Parceria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.URLPagina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.URLPagina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataTermino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataTermino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QtdLikes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QtdLikes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHoraCadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHoraCadastro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.Codigo }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

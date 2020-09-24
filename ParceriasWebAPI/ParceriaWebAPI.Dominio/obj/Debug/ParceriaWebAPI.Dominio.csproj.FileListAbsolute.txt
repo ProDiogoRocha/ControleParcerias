@@ -1,0 +1,8 @@
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ParceriasWebAPI\ParceriaWebAPI.Dominio\bin\Debug\ParceriaWebAPI.Dominio.dll
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ParceriasWebAPI\ParceriaWebAPI.Dominio\bin\Debug\ParceriaWebAPI.Dominio.pdb
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ParceriasWebAPI\ParceriaWebAPI.Dominio\obj\Debug\ParceriaWebAPI.Dominio.csprojAssemblyReference.cache
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ParceriasWebAPI\ParceriaWebAPI.Dominio\obj\Debug\ParceriaWebAPI.Dominio.dll
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ParceriasWebAPI\ParceriaWebAPI.Dominio\obj\Debug\ParceriaWebAPI.Dominio.pdb
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ParceriasWebAPI\ParceriaWebAPI.Dominio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ParceriasWebAPI\ParceriaWebAPI.Dominio\bin\Debug\Newtonsoft.Json.xml
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ParceriasWebAPI\ParceriaWebAPI.Dominio\obj\Debug\ParceriaWebAPI.Dominio.csproj.CopyComplete

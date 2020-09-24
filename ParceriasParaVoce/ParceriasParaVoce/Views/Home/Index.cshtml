@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="container ">
+    <h1>Parcerias para você</h1>
+    <div class="form-group col-md-12 ">
+        <label for="input_busca_parceria">Buscar de Parceria</label>
+        <div class="form-inline">
+            <div class="col-md-10">
+                <input style="width: 100%;" type="text" class="form-control" id="input_busca_parceria"
+                       placeholder="Entre com o nome da parceria ou empresa">
+            </div>
+            <button id="pesquisa_parceria" type="button" class="btn btn-primary col-md-1">Pesquisar</button>
+        </div>
+    </div>
+</div>
+<div class="container" id="conteudo_parcerias">
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("RetornaLista", "Home")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) { $("#conteudo_parcerias").html(data) },
+                error: function (data) { alert("não deu") }
+            });
+        });
+    </script>
+}

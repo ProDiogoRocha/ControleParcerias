@@ -1,0 +1,147 @@
+﻿@model ControleDeParcerias.Web.ViewModels.ParceriaViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edição</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Parceria</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Codigo)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+                <br />
+                <span id="error-Titulo" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.URLPagina, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.URLPagina, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.URLPagina, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Empresa, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Empresa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Empresa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataInicio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataInicio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DataInicio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataTermino, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataTermino, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DataTermino, "", new { @class = "text-danger" })
+                <br />
+                <span id="error-dataTermino" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.QtdLikes, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.QtdLikes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.QtdLikes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="btn_salvar_parceria" type="submit" value="Salvar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $("#DataTermino").keyup(function () {
+            var DataInicio = $("#DataInicio").val();
+            var DataTermino = $("#DataTermino").val();
+
+            let partsDataInicio = DataInicio.split('-');
+            let partsDataTermino = DataTermino.split('-');
+
+            var dataInicial = new Date(partsDataInicio[0], partsDataInicio[1] - 1, partsDataInicio[2]);
+            var dataFinal = new Date(partsDataTermino[0], partsDataTermino[1] - 1, partsDataTermino[2]);
+
+            if (dataInicial < dataFinal) {
+                debugger;
+
+                var timeDiff = dataFinal.getTime() - dataInicial.getTime();
+                const DAY = 24 * 60 * 60 * 1000;
+                var diffDays = timeDiff / DAY;
+
+                if (diffDays < 5) {
+                    $("#error-dataTermino").text("A Data de Termino deve ter uma diferença de 5 dias ou mais da Data Inicial")
+                    $("#btn_salvar_parceria").css('display', 'none');
+                } else {
+                    $("#error-dataTermino").text("")
+                    $("#btn_salvar_parceria").css('display', '');
+                }
+            } else {
+                $("#error-dataTermino").text("A Data de Termino deve ser maior que a Data Inicial")
+                $("#btn_salvar_parceria").css('display', 'none');
+            }
+        });
+
+        $("#Titulo").keyup(function () {
+            $.ajax({
+                type: "GET",
+                traditional: true,
+                url: '@Url.Action("BuscarTituloParceria", "Parceria")',
+                data: { titulo: $("#Titulo").val()},
+                success: function (data) {
+                    if (data == "True") {
+                        $("#error-Titulo").text("O tituto ja está cadastrado, digite outro titulo")
+                        $("#btn_salvar_parceria").css('display', 'none');
+                    } else {
+                        $("#error-Titulo").text("")
+                        $("#btn_salvar_parceria").css('display', '');
+                    }
+                },
+                error: function () {
+                    alert("Erro na tentativa de emissão!");
+                }
+    });
+        });
+
+    </script>
+}

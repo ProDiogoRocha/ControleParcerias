@@ -1,0 +1,11 @@
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\bin\Debug\ControleDeParcerias.Data.dll
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\bin\Debug\ControleDeParcerias.Data.pdb
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\bin\Debug\ControleParcerias.Dominio.dll
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\bin\Debug\Dapper.dll
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\bin\Debug\ControleParcerias.Dominio.pdb
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\bin\Debug\Dapper.xml
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\obj\Debug\ControleDeParcerias.Data.csprojAssemblyReference.cache
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\obj\Debug\ControleDeParcerias.Data.csproj.CopyComplete
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\obj\Debug\ControleDeParcerias.Data.dll
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\obj\Debug\ControleDeParcerias.Data.pdb
+C:\Users\prodi\Documents\Pessoal\Profissional\ProvaFiap\ControleDeParcerias\ControleDeParcerias.Data\bin\Debug\ControleDeParcerias.Data.dll.config

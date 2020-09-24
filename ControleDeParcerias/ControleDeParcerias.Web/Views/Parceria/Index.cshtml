@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ControleDeParcerias.Web.ViewModels.ParceriaViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div style="padding-top:10px; padding-bottom:10px; padding-left:90%">
+    <a href='@Url.Action("Create", "Parceria")' class="btn btn-default" role="button" aria-pressed="true">Cadastrar</a>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataTermino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QtdLikes)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataTermino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdLikes)
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "Edit", new { id = item.Codigo }) |
+                @Html.ActionLink("Detalhe", "Details", new { id = item.Codigo }) |
+                <a href="javascript:CarregarURL(@item.Codigo)">Delete</a>
+
+                @*@Html.ActionLink("Excluir", "Delete", new { id = item.Codigo , data-toggle = "modal",  })*@
+
+                <!-- Button trigger modal -->
+                @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDelete">
+                    Launch demo modal
+                </button>*@
+            </td>
+        </tr>
+    }
+
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>*@
+                <a href="javascript:FecharModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </a>
+            </div>
+            <div class="modal-body">
+                Deseja realmente excluir essa parceria?
+            </div>
+            <span id="valorDeId" class="hidden">@Url.Action("DeleteConfirmed", "Parceria")</span>
+            <div class="modal-footer">
+                <a href="" id="btnDeletar" type="button" class="btn btn-default">Sim</a>
+                <a href="javascript:FecharModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Não</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function CarregarURL(id) {
+        var primeiraParte = $("#valorDeId").text(); 
+        var URLFinal = primeiraParte + "/" + id
+        $("#btnDeletar").attr("href", URLFinal)
+        $("#modalDelete").attr("class", "modal fade in");
+        $("#modalDelete").css('display', 'block');
+    }
+
+    function FecharModal() {
+        $("#modalDelete").attr("class", "modal fade");
+        $("#modalDelete").css('display', 'none');
+    }
+</script>
